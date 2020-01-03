@@ -13,7 +13,7 @@ namespace Foo
 
         public string Compute(int value)
         {
-            string result = null;
+            string? result = null;
             foreach (var mapping in _options.Mappings)
             {
                 if (value % mapping.Key == 0)

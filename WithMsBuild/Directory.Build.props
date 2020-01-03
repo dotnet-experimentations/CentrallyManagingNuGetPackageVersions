@@ -14,6 +14,8 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
 
+    <Nullable>enable</Nullable>
+
     <!-- In case of a preview of the DotNet Sdk, avoid warning msg -->
     <!-- <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage> -->
   </PropertyGroup>
