@@ -7,7 +7,7 @@
     <!-- https://github.com/NuGet/Home/issues/8493#issuecomment-525054558 -->
     <DisableImplicitNugetFallbackFolder>true</DisableImplicitNugetFallbackFolder>
 
-    <!-- use 'latest' here in case of bug from the language / compiler / IDE -->      
+    <!-- use 'latest' here in case of bug from the language / compiler / IDE -->
     <LangVersion>preview</LangVersion>
 
     <!-- Nopity -->
@@ -19,5 +19,9 @@
     <!-- In case of a preview of the DotNet Sdk, avoid warning msg -->
     <!-- <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage> -->
   </PropertyGroup>
-    
+
+  <ItemGroup>
+    <PackageReference Include="ConfigureAwaitChecker.Analyzer" Version="$(ConfigureAwaitCheckerAnalyzerPackageVersion)" />
+  </ItemGroup>
+
 </Project>

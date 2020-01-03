@@ -14,6 +14,11 @@
     <MicrosoftAspNetCorePackageVersion>2.*</MicrosoftAspNetCorePackageVersion>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <MicrosoftSourceLinkGitHubPackageVersion>$(LatestVersion)</MicrosoftSourceLinkGitHubPackageVersion>
+    <ConfigureAwaitCheckerAnalyzerPackageVersion>$(LatestVersion)</ConfigureAwaitCheckerAnalyzerPackageVersion>
+  </PropertyGroup>
+
   <PropertyGroup Label="Test dependencies">
     <MicrosoftNetTestSdkPackageVersion>$(LatestVersion)</MicrosoftNetTestSdkPackageVersion>
     <XUnitPackageVersion>$(LatestVersion)</XUnitPackageVersion>
