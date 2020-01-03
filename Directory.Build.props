@@ -1,8 +1,13 @@
 <Project>
 
-    <!-- https://github.com/NuGet/Home/issues/8493#issuecomment-525054558 -->
-    <DisableImplicitNugetFallbackFolder>true</DisableImplicitNugetFallbackFolder>
-    
     <Import Project="build/version.props" />
     <Import Project="build/sources.props" />
+
+    <PropertyGroup>
+        <!-- https://github.com/NuGet/Home/issues/8493#issuecomment-525054558 -->
+        <DisableImplicitNugetFallbackFolder>true</DisableImplicitNugetFallbackFolder>
+        
+        <LangVersion>preview</LangVersion>
+    </PropertyGroup>
+    
 </Project>
