@@ -1,0 +1,21 @@
+<Project>
+
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="$(MicrosoftAspNetCorePackageVersion)" />
+
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftExtensionsPackageVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="$(MicrosoftExtensionsPackageVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="$(MicrosoftSourceLinkGitHubPackageVersion)"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNetTestSdkPackageVersion)" />
+    <PackageVersion Include="xunit" Version="$(XUnitPackageVersion)" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="$(XUnitRunnerVisualStudioPackageVersion)" />
+    <PackageVersion Include="coverlet.collector" Version="$(CoverletCollectorPackageVersion)" />
+  </ItemGroup>
+
+</Project>
