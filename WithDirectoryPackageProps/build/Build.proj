@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.Build.Traversal/2.0.24">
+  <ItemGroup>
+    <!-- Build all projects recursively under the "samples|src|test" folders -->
+    <ProjectReference Include="../samples/**/*.*proj" />
+    <ProjectReference Include="../src/**/*.*proj" />
+    <ProjectReference Include="../test/**/*.*proj" />
+  </ItemGroup>
+</Project>

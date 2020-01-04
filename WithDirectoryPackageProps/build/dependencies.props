@@ -1,0 +1,29 @@
+<Project>
+
+  <PropertyGroup>
+    <LatestVersion>[*, 9999.0)</LatestVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package for AspNetCore/Extensions 3.x" Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <MicrosoftExtensionsPackageVersion>$(LatestVersion)</MicrosoftExtensionsPackageVersion>
+    <MicrosoftAspNetCorePackageVersion>$(LatestVersion)</MicrosoftAspNetCorePackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package for AspNetCore/Extensions 2.x" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.2'">
+    <MicrosoftExtensionsPackageVersion>2.*</MicrosoftExtensionsPackageVersion>
+    <MicrosoftAspNetCorePackageVersion>2.*</MicrosoftAspNetCorePackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <MicrosoftSourceLinkGitHubPackageVersion>$(LatestVersion)</MicrosoftSourceLinkGitHubPackageVersion>
+    <ConfigureAwaitCheckerAnalyzerPackageVersion>$(LatestVersion)</ConfigureAwaitCheckerAnalyzerPackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Test dependencies">
+    <MicrosoftNetTestSdkPackageVersion>$(LatestVersion)</MicrosoftNetTestSdkPackageVersion>
+    <XUnitPackageVersion>$(LatestVersion)</XUnitPackageVersion>
+    <XUnitRunnerVisualStudioPackageVersion>$(LatestVersion)</XUnitRunnerVisualStudioPackageVersion>
+    <CoverletCollectorPackageVersion>$(LatestVersion)</CoverletCollectorPackageVersion>
+  </PropertyGroup>
+
+</Project>
