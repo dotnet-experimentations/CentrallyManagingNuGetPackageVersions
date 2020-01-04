@@ -1,4 +1,5 @@
 <Project>
+  <Import Project="build/dependencies.props" />
 
   <ItemGroup>
     <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="$(MicrosoftAspNetCorePackageVersion)" />
