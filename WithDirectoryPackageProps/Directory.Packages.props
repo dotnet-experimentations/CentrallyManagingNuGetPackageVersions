@@ -1,22 +1,38 @@
 <Project>
-  <Import Project="build/dependencies.props" />
+  <PropertyGroup>
+    <LatestVersion>[*, 9999.0)</LatestVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package for AspNetCore/Extensions 3.x" Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <MicrosoftExtensionsPackageVersion>$(LatestVersion)</MicrosoftExtensionsPackageVersion>
+    <MicrosoftAspNetCorePackageVersion>$(LatestVersion)</MicrosoftAspNetCorePackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package for AspNetCore/Extensions 2.x" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.2'">
+    <MicrosoftExtensionsPackageVersion>2.*</MicrosoftExtensionsPackageVersion>
+    <MicrosoftAspNetCorePackageVersion>2.*</MicrosoftAspNetCorePackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup Label="Dependencies included in all projects of the repository">
+    <PackageVersion Include="ConfigureAwaitChecker.Analyzer" Version="$(LatestVersion)" />
+  </ItemGroup>
+
+  <ItemGroup Label="Dependencies included in all projects of the folder src/">
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="$(LatestVersion)"/>
+  </ItemGroup>
+
+  <ItemGroup Label="Dependencies included in all projects of the folder test/">
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="$(LatestVersion)" />
+    <PackageVersion Include="xunit" Version="$(LatestVersion)" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="$(LatestVersion)" />
+    <PackageVersion Include="coverlet.collector" Version="$(LatestVersion)" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="$(MicrosoftAspNetCorePackageVersion)" />
 
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftExtensionsPackageVersion)" />
     <PackageVersion Include="Microsoft.Extensions.Options" Version="$(MicrosoftExtensionsPackageVersion)" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="$(MicrosoftSourceLinkGitHubPackageVersion)"/>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNetTestSdkPackageVersion)" />
-    <PackageVersion Include="xunit" Version="$(XUnitPackageVersion)" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="$(XUnitRunnerVisualStudioPackageVersion)" />
-    <PackageVersion Include="coverlet.collector" Version="$(CoverletCollectorPackageVersion)" />
   </ItemGroup>
 
 </Project>
