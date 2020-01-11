@@ -5,25 +5,32 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Package for AspNetCore/Extensions 3.x" Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
-    <MicrosoftExtensionsPackageVersion>$(LatestVersion)</MicrosoftExtensionsPackageVersion>
     <MicrosoftAspNetCorePackageVersion>$(LatestVersion)</MicrosoftAspNetCorePackageVersion>
+    <MicrosoftExtensionsPackageVersion>$(LatestVersion)</MicrosoftExtensionsPackageVersion>
   </PropertyGroup>
 
   <PropertyGroup Label="Package for AspNetCore/Extensions 2.x" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.2'">
-    <MicrosoftExtensionsPackageVersion>2.*</MicrosoftExtensionsPackageVersion>
     <MicrosoftAspNetCorePackageVersion>2.*</MicrosoftAspNetCorePackageVersion>
+    <MicrosoftExtensionsPackageVersion>2.*</MicrosoftExtensionsPackageVersion>
   </PropertyGroup>
 
-  <PropertyGroup>
-    <MicrosoftSourceLinkGitHubPackageVersion>$(LatestVersion)</MicrosoftSourceLinkGitHubPackageVersion>
-    <ConfigureAwaitCheckerAnalyzerPackageVersion>$(LatestVersion)</ConfigureAwaitCheckerAnalyzerPackageVersion>
-  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.AspNetCore.Http.Abstractions" Version="$(MicrosoftAspNetCorePackageVersion)" />
 
-  <PropertyGroup Label="Test dependencies">
-    <MicrosoftNetTestSdkPackageVersion>$(LatestVersion)</MicrosoftNetTestSdkPackageVersion>
-    <XUnitPackageVersion>$(LatestVersion)</XUnitPackageVersion>
-    <XUnitRunnerVisualStudioPackageVersion>$(LatestVersion)</XUnitRunnerVisualStudioPackageVersion>
-    <CoverletCollectorPackageVersion>$(LatestVersion)</CoverletCollectorPackageVersion>
-  </PropertyGroup>
+    <PackageReference Update="Microsoft.Extensions.Options" Version="$(MicrosoftExtensionsPackageVersion)" />
+    <PackageReference Update="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftExtensionsPackageVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="$(LatestVersion)" />
+    <PackageReference Update="ConfigureAwaitChecker.Analyzer" Version="$(LatestVersion)" />
+  </ItemGroup>
+
+  <ItemGroup Label="Test dependencies">
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="$(LatestVersion)" />
+    <PackageReference Update="xunit" Version="$(LatestVersion)" />
+    <PackageReference Update="xunit.runner.visualstudio" Version="$(LatestVersion)" />
+    <PackageReference Update="coverlet.collector" Version="$(LatestVersion)" />
+  </ItemGroup>
 
 </Project>
