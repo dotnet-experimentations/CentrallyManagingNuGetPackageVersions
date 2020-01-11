@@ -20,8 +20,4 @@
     <!-- <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage> -->
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="ConfigureAwaitChecker.Analyzer" Version="$(ConfigureAwaitCheckerAnalyzerPackageVersion)" />
-  </ItemGroup>
-
 </Project>

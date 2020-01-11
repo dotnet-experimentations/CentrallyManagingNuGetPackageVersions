@@ -1,2 +1,7 @@
 <Project>
+
+  <ItemGroup>
+    <PackageReference Include="ConfigureAwaitChecker.Analyzer" />
+  </ItemGroup>
+
 </Project>
