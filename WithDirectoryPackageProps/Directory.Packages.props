@@ -3,7 +3,8 @@
     <LatestVersion>[*, 9999.0)</LatestVersion>
   </PropertyGroup>
 
-  <!-- <PropertyGroup Label="Package for AspNetCore/Extensions 3.x" Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+  <!--
+  <PropertyGroup Label="Package for AspNetCore/Extensions 3.x" Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
     <MicrosoftExtensionsPackageVersion>$(LatestVersion)</MicrosoftExtensionsPackageVersion>
     <MicrosoftAspNetCorePackageVersion>$(LatestVersion)</MicrosoftAspNetCorePackageVersion>
   </PropertyGroup>
@@ -11,7 +12,13 @@
   <PropertyGroup Label="Package for AspNetCore/Extensions 2.x" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.2'">
     <MicrosoftExtensionsPackageVersion>2.*</MicrosoftExtensionsPackageVersion>
     <MicrosoftAspNetCorePackageVersion>2.*</MicrosoftAspNetCorePackageVersion>
-  </PropertyGroup> -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftExtensionsPackageVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="$(MicrosoftAspNetCorePackageVersion)" />
+  </ItemGroup>
+  -->
 
   <ItemGroup Label="Dependencies included in all projects of the repository">
     <PackageVersion Include="ConfigureAwaitChecker.Analyzer" Version="$(LatestVersion)" />
