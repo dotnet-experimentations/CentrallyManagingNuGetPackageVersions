@@ -3,7 +3,7 @@
     <LatestVersion>[*, 9999.0)</LatestVersion>
   </PropertyGroup>
 
-  <PropertyGroup Label="Package for AspNetCore/Extensions 3.x" Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+  <!-- <PropertyGroup Label="Package for AspNetCore/Extensions 3.x" Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
     <MicrosoftExtensionsPackageVersion>$(LatestVersion)</MicrosoftExtensionsPackageVersion>
     <MicrosoftAspNetCorePackageVersion>$(LatestVersion)</MicrosoftAspNetCorePackageVersion>
   </PropertyGroup>
@@ -11,7 +11,7 @@
   <PropertyGroup Label="Package for AspNetCore/Extensions 2.x" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.2'">
     <MicrosoftExtensionsPackageVersion>2.*</MicrosoftExtensionsPackageVersion>
     <MicrosoftAspNetCorePackageVersion>2.*</MicrosoftAspNetCorePackageVersion>
-  </PropertyGroup>
+  </PropertyGroup> -->
 
   <ItemGroup Label="Dependencies included in all projects of the repository">
     <PackageVersion Include="ConfigureAwaitChecker.Analyzer" Version="$(LatestVersion)" />
@@ -28,11 +28,19 @@
     <PackageVersion Include="coverlet.collector" Version="$(LatestVersion)" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="$(MicrosoftAspNetCorePackageVersion)" />
+  <ItemGroup Label="Package for AspNetCore/Extensions 3.x" Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="$(LatestVersion)" />
 
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftExtensionsPackageVersion)" />
-    <PackageVersion Include="Microsoft.Extensions.Options" Version="$(MicrosoftExtensionsPackageVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(LatestVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="$(LatestVersion)" />
+  </ItemGroup>
+
+
+  <ItemGroup Label="Package for AspNetCore/Extensions 2.x" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.2'">
+    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.*" />
+
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="2.*" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="2.*" />
   </ItemGroup>
 
 </Project>
