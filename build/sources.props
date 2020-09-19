@@ -1,23 +1,20 @@
 <Project>
-    <PropertyGroup>
-        <RestoreSources>
-            https://api.nuget.org/v3/index.json
-        </RestoreSources>
-    </PropertyGroup>
+  <PropertyGroup>
+    <!-- https://github.com/NuGet/Home/issues/8493#issuecomment-525054558 -->
+    <DisableImplicitNugetFallbackFolder>true</DisableImplicitNugetFallbackFolder>
 
-    <PropertyGroup Condition="'$(DOTNET_RESTORE_OFFLINE)' == 'true' OR '$(DOTNET_RESTORE_OFFLINE)' == '1'">
-        <!-- DOTNET_RESTORE_OFFLINE is an arbitrary name for the EnvVar, it's not supported by any Microsoft team -->
-        <RestoreSources>
-            C:\Users\$(USERNAME)\.nuget\packages;
-        </RestoreSources>
-    </PropertyGroup>
+    <RestoreSources>
+      https://api.nuget.org/v3/index.json
+    </RestoreSources>
 
-    <!-- 
-    <PropertyGroup  Condition="'$(TF_BUILD)' != 'true'>
-        <RestoreSources>
-            https://my/github/feed/for/preview
-        </RestoreSources>
-    </PropertyGroup>
-    -->
+    <!-- DOTNET_RESTORE_OFFLINE is an arbitrary name for the EnvVar, it's not supported by any Microsoft team -->
+    <RestoreSources Condition="'$(DOTNET_RESTORE_OFFLINE)' == 'true' OR '$(DOTNET_RESTORE_OFFLINE)' == '1'">
+      C:\Users\$(USERNAME)\.nuget\packages;
+    </RestoreSources>
+
+    <RestoreSources Condition="'$(TF_BUILD)' == 'true'">
+      https://my/feed/from/az/do
+    </RestoreSources>
+  </PropertyGroup>
 
 </Project>
