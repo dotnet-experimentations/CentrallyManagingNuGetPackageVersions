@@ -1,9 +1,0 @@
-<Project>
-  <Import Project="../Directory.Build.props" />
-
-  <PropertyGroup>
-    <IsTestProject>false</IsTestProject>
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
-  
-</Project>

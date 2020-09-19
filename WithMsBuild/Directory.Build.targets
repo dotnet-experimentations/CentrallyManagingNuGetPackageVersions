@@ -1,8 +1,0 @@
-<Project>
-
-  <ItemGroup>
-    <PackageReference Include="ConfigureAwaitChecker.Analyzer" />
-  </ItemGroup>
-
-  <Import Project="build/dependencies.props" />
-</Project>
