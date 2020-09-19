@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-#if NETCOREAPP2_2
+#if NETCOREAPP2_1
 using Microsoft.AspNetCore;
 #endif
 
