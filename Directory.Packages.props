@@ -1,24 +1,7 @@
 <Project>
   <PropertyGroup>
-    <LatestVersion>[*, 9999.0)</LatestVersion>
+    <LatestVersion>*</LatestVersion>
   </PropertyGroup>
-
-  <!--
-  <PropertyGroup Label="Package for AspNetCore/Extensions 3.x" Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
-    <MicrosoftExtensionsPackageVersion>$(LatestVersion)</MicrosoftExtensionsPackageVersion>
-    <MicrosoftAspNetCorePackageVersion>$(LatestVersion)</MicrosoftAspNetCorePackageVersion>
-  </PropertyGroup>
-
-  <PropertyGroup Label="Package for AspNetCore/Extensions 2.x" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.2'">
-    <MicrosoftExtensionsPackageVersion>2.*</MicrosoftExtensionsPackageVersion>
-    <MicrosoftAspNetCorePackageVersion>2.*</MicrosoftAspNetCorePackageVersion>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftExtensionsPackageVersion)" />
-    <PackageVersion Include="Microsoft.Extensions.Options" Version="$(MicrosoftAspNetCorePackageVersion)" />
-  </ItemGroup>
-  -->
 
   <ItemGroup Label="Dependencies included in all projects of the repository">
     <PackageVersion Include="ConfigureAwaitChecker.Analyzer" Version="$(LatestVersion)" />
@@ -43,11 +26,11 @@
   </ItemGroup>
 
 
-  <ItemGroup Label="Package for AspNetCore/Extensions 2.x" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.2'">
-    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.*" />
+  <ItemGroup Label="Package for AspNetCore/Extensions 2.x" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.1'">
+    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.*" />
 
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="2.*" />
-    <PackageVersion Include="Microsoft.Extensions.Options" Version="2.*" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="2.1.*" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="2.1.*" />
   </ItemGroup>
 
 </Project>
