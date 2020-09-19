@@ -46,7 +46,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{50508C0E-07AF-48CB-A1CA-5446031DAA76}"
 	ProjectSection(SolutionItems) = preProject
 		build\Build.proj = build\Build.proj
-		build\dependencies.props = build\dependencies.props
 		build\sources.props = build\sources.props
 		build\version.props = build\version.props
 	EndProjectSection
