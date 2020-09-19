@@ -20,7 +20,7 @@
     <Nullable>enable</Nullable>
 
     <!-- In case of a preview of the DotNet Sdk, avoid warning msg -->
-    <!-- <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage> -->
+    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
   </PropertyGroup>
 
 </Project>
