@@ -1,33 +1,38 @@
 <Project>
   <PropertyGroup>
-    <LatestVersion>*</LatestVersion>
+    <LatestVersion>(0, 9999.0]</LatestVersion>
   </PropertyGroup>
 
   <ItemGroup Label="Dependencies included in all projects of the repository">
-    <PackageVersion Include="ConfigureAwaitChecker.Analyzer" Version="$(LatestVersion)" />
+    <PackageVersion Include="ConfigureAwaitChecker.Analyzer" Version="4.0.0" />
   </ItemGroup>
 
   <ItemGroup Label="Dependencies included in all projects of the folder src/">
-    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="$(LatestVersion)"/>
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.0.0"/>
   </ItemGroup>
 
   <ItemGroup Label="Dependencies included in all projects of the folder test/">
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="$(LatestVersion)" />
-    <PackageVersion Include="xunit" Version="$(LatestVersion)" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="$(LatestVersion)" />
-    <PackageVersion Include="coverlet.collector" Version="$(LatestVersion)" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageVersion Include="xunit" Version="2.4.1" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.1" />
+    <PackageVersion Include="coverlet.collector" Version="1.3.0" />
   </ItemGroup>
 
   <ItemGroup Label="Package for AspNetCore/Extensions 3.x" Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(LatestVersion)" />
-    <PackageVersion Include="Microsoft.Extensions.Options" Version="$(LatestVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="3.1.9" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="3.1.9" />
+  </ItemGroup>
+
+  <ItemGroup Label="Package for AspNetCore/Extensions 3.x" Condition="'$(TargetFramework)' == 'net5.0'">
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0-rc.2.20475.5" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="5.0.0-rc.2.20475.5" />
   </ItemGroup>
 
   <ItemGroup Label="Package for AspNetCore/Extensions 2.x" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.1'">
-    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.*" />
+    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.1" />
 
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="2.1.*" />
-    <PackageVersion Include="Microsoft.Extensions.Options" Version="2.1.*" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="2.1.1" />
   </ItemGroup>
 
 </Project>

@@ -15,17 +15,17 @@ namespace FooSample
             CreateHostBuilder(args).Build().Run();
         }
 
-#if NETCOREAPP3_1
+#if NETCOREAPP2_1
+        public static IWebHostBuilder CreateHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                   .UseStartup<Startup>();
+#else
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-#else
-        public static IWebHostBuilder CreateHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                   .UseStartup<Startup>();
 #endif
     }
 }
